@@ -42,6 +42,20 @@
         line-height: 1.55;
       }
 
+      .links {
+        margin-top: 14px;
+      }
+
+      a {
+        color: #2563a6;
+        font-weight: 620;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
       figure {
         margin: 28px 0 0;
         padding: 18px;
@@ -72,6 +86,9 @@
           Best@k comparison for 7x7 Maze RLVR runs at learning rate 3e-6, excluding
           VPO and k=1.
         </p>
+        <p class="links">
+          <a href="assets/best-at-k-lr3e-6-with-vpo.png">View the version including AdamW VPO at LR=3e-6</a>.
+        </p>
       </header>
       <figure>
         <img
@@ -81,6 +98,16 @@
         <figcaption>
           Mean best@k over route pools for AdamW Multi-RLVR and fixed-coefficient
           Soft-Muon p=0.4.
+        </figcaption>
+      </figure>
+      <figure>
+        <img
+          src="assets/soft-muon-p04-cumulative-fit.png"
+          alt="Cumulative p=0.4 approximation built from stacked Newton-Schulz iterates."
+        >
+        <figcaption>
+          Fixed p=0.4 Soft-Muon approximation built as a cumulative stack of
+          Newton-Schulz iterates, staying below the target power curve.
         </figcaption>
       </figure>
     </main>
