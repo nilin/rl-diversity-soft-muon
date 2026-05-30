@@ -23,9 +23,12 @@ We run 50 steps and sweng learning rates 1e-6, 3e-6, 1e-5 and picked 3e-6 based 
 
 Best@k comparison for 7x7 Maze RLVR runs at learning rate 3e-6, excluding VPO and k=1.
 
-[View the version including AdamW VPO at LR=3e-6](assets/best-at-k-lr3e-6-with-vpo.png).
+![Best@k curve comparing AdamW Multi-RLVR, Soft-Muon p=0.4, and VPO at learning rate 3e-6.](assets/best-at-k-lr3e-6-with-vpo.png)
 
+<!---
+[View the version including AdamW VPO at LR=3e-6](assets/best-at-k-lr3e-6-with-vpo.png).
 ![Best@k curve comparing AdamW Multi-RLVR and Soft-Muon p=0.4 at learning rate 3e-6.](assets/best-at-k-lr3e-6.png)
+--->
 
 _Mean best@k over route pools for AdamW Multi-RLVR and fixed-coefficient Soft-Muon p=0.4._
 
