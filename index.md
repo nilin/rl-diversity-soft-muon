@@ -15,8 +15,11 @@ In RL we only get one reward signal per reponse (or a few in the case of VPO). T
 _Fixed p=0.4 Soft-Muon approximation built as a cumulative stack of standard Muon's Newton-Schulz iterates._
 
 
-## Results
+## Experiment
 
+We test Soft-Muon for RL in a setting from the [VPO paper](https://arxiv.org/abs/2605.22817). We use a 7x7 version of the Maze benchmark described in the paper. We compare AdamW GRPO baseline vs Muon GRPO vs AdamW VPO. Like the VPO paper we train on multi-answer chains: one model completion contains m=3 candidate answers (routes). We use multi-answer chains for all methods (AdamW baseline, Muon, and AdamW VPO). For the AdamW and Muon GRPO methods, each rollout is scored by the best route among the 3 following the VPO paper (probably not ideal for these methods for late training). VPO additionally receives a vector reward r(x, y) representing a decomposition of the reward into [completion, gold, diamond, avoid_lava], whereas the other methods get the averaged vector reward.
+
+We run 50 steps and sweng learning rates 1e-6, 3e-6, 1e-5 and picked 3e-6 based on the pass@30 for the AdamW GRPO baseline.  
 
 Best@k comparison for 7x7 Maze RLVR runs at learning rate 3e-6, excluding VPO and k=1.
 
