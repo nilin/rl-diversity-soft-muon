@@ -10,6 +10,11 @@ The 2D weights `W` in a neural network or transformer represent linear mappings 
 
 In RL we only get one reward signal per reponse (or a few in the case of VPO). Therefore the estimated policy gradient may not have enough information to estimate 1000s of input-output relationships, so the Muon update becomes dominated by noise. On the other hand collapse of diversity and exploration is a well-known issue that can arise in RL finetuning of LLMs, and methods such as [vector policy optimization (VPO)](https://arxiv.org/abs/2605.22817) seek to ameliorate this. We explore whether [Soft-Muon](https://nilin.github.io/contra-muon-and-soft-muon/) provides an alternative way to encourage diversity and exploration during RL, while being more robust to noisy policy gradients than full Muon.   
 
+![Cumulative p=0.4 approximation built from stacked Newton-Schulz iterates.](assets/soft-muon-p04-cumulative-fit.png)
+
+_Fixed p=0.4 Soft-Muon approximation built as a cumulative stack of standard Muon's Newton-Schulz iterates._
+
+
 
 Best@k comparison for 7x7 Maze RLVR runs at learning rate 3e-6, excluding VPO and k=1.
 
@@ -19,6 +24,3 @@ Best@k comparison for 7x7 Maze RLVR runs at learning rate 3e-6, excluding VPO an
 
 _Mean best@k over route pools for AdamW Multi-RLVR and fixed-coefficient Soft-Muon p=0.4._
 
-![Cumulative p=0.4 approximation built from stacked Newton-Schulz iterates.](assets/soft-muon-p04-cumulative-fit.png)
-
-_Fixed p=0.4 Soft-Muon approximation built as a cumulative stack of Newton-Schulz iterates, staying below the target power curve._
